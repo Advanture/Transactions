@@ -1,0 +1,36 @@
+{
+    "name": "advanture/transactions",
+    "description": "Transactions system",
+    "keywords": ["laravel", "transactions"],
+    "license": "MIT",
+    "require": {
+        "php": "^7.2.5",
+        "ext-json": "*",
+        "laravel/framework": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Advanture\\Transactions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Advanture\\Transactions\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Advanture\\Transactions\\TransactionsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
