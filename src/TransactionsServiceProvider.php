@@ -10,14 +10,10 @@ class TransactionsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        if (!config('transactions.enabled')) {
-            return;
-        }
-
         $this->registerMigrations();
 
         $this->publishes([
-            __DIR__ . '../config/transactions.php' => config_path('transactions.php'),
+            __DIR__ . '/../config/transactions.php' => config_path('transactions.php'),
         ]);
     }
 

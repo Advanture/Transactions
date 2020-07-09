@@ -15,12 +15,12 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('type_id');
-           $table->foreign('type_id')
-               ->references('id')
-               ->on('types');
+            $table->unsignedBigInteger('type_id');
+            $table->foreign('type_id')
+                ->references('id')
+                ->on('types');
 
-            $table->timestamps();
+                $table->timestamps();
         });
     }
 

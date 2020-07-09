@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'enabled' => true,
     'models' => [
         'entry' => Advanture\Transactions\Models\Entry::class,
         'transaction' => Advanture\Transactions\Models\Transaction::class,
