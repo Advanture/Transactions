@@ -1,7 +1,7 @@
 <?php
 
 
-namespace IAdvanture\Transactions;
+namespace Advanture\Transactions;
 
 
 use Illuminate\Support\ServiceProvider;
