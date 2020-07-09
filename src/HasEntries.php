@@ -2,6 +2,8 @@
 
 namespace Advanture\Transactions;
 
+use Illuminate\Database\Eloquent\Model;
+
 trait HasEntries
 {
     public function entries()
