@@ -20,13 +20,13 @@ class CreateTypesTable extends Migration
             $table->string('label');
         });
 
-        \App\Type::create([
+        config(transactions.models.type)::create([
             'title' => 'Deposit',
             'description' => 'Deposit Desc',
             'label' => 'deposit',
         ]);
 
-        \App\Type::create([
+        config(transactions.models.type)::create([
             'title' => 'Transfer',
             'description' => 'Transfer Desc',
             'label' => 'transfer',
