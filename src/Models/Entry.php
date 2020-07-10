@@ -20,6 +20,6 @@ class Entry extends Model
 
     public function transactions()
     {
-        return $this->belongsTo(config('transactions.models.transaction'));
+        return $this->belongsTo(Models\Transaction::class);
     }
 }

@@ -1,10 +1,40 @@
 <?php
 
-namespace Tests;
+namespace Advanture\Transactions\Tests;
 
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Advanture\Transactions\TransactionsServiceProvider;
 
-abstract class TestCase extends BaseTestCase
+class TestCase extends \Orchestra\Testbench\TestCase
 {
-    use CreatesApplication;
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->artisan('migrate');
+        // $this->artisan('vendor:publish');
+    }
+
+    /**
+     * Get package providers.
+     *
+     * @param  \Illuminate\Foundation\Application  $app
+     *
+     * @return array
+     */
+    protected function getPackageProviders($app)
+    {
+        return [
+            TransactionsServiceProvider::class,
+        ];
+    }
+
+    protected function getEnvironmentSetUp($app)
+    {
+        $app['config']->set('database.default', 'testdb');
+        $app['config']->set('database.connections.testdb', [
+            'driver' => 'sqlite',
+            'database' => ':memory:'
+        ]);
+    }
 }

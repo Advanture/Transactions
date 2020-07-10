@@ -8,15 +8,15 @@ trait HasEntries
 {
     public function entries()
     {
-        return $this->morphMany(config('transactions.models.entry'), 'entriable');
+        return $this->morphMany(Models\Entry::class, 'entriable');
     }
 
     public function transfer(Model $debit, int $amount)
     {
         if(!$amount > 0) return false;
 
-        $type = config('transactions.models.type')::where('label', '=', 'transfer')->first();
-        $transaction = config('transactions.models.transaction')::create(['type_id' => $type->id]);
+        $type = Models\Type::where('label', '=', 'transfer')->first();
+        $transaction = Models\Transaction::create(['type_id' => $type->id]);
         $this->entries()->create(['transaction_id' => $transaction->id, 'amount' => 0 - $amount]);
         $debit->entries()->create(['transaction_id' => $transaction->id, 'amount' => $amount]);
 

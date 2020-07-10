@@ -16,6 +16,6 @@ class Type extends Model
 
     public function transaction()
     {
-        return $this->hasMany(config('transactions.models.transaction'));
+        return $this->hasMany(Models\Transaction::class);
     }
 }

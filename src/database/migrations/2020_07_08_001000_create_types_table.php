@@ -20,13 +20,13 @@ class CreateTypesTable extends Migration
             $table->string('label');
         });
 
-        config('transactions.models.type')::create([
+        Advanture\Transactions\Models\Type::create([
             'title' => 'Deposit',
             'description' => 'Deposit Desc',
             'label' => 'deposit',
         ]);
 
-        config('transactions.models.type')::create([
+        Advanture\Transactions\Models\Type::create([
             'title' => 'Transfer',
             'description' => 'Transfer Desc',
             'label' => 'transfer',

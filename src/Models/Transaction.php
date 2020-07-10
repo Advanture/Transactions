@@ -12,11 +12,11 @@ class Transaction extends Model
 
     public function entries()
     {
-        return $this->hasMany(config('transactions.models.entry'));
+        return $this->hasMany(Models\Entry::class);
     }
 
     public function type()
     {
-        return $this->belongsTo(config('transactions.models.type'));
+        return $this->belongsTo(Models\Type::class);
     }
 }
