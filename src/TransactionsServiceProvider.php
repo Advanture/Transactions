@@ -11,10 +11,6 @@ class TransactionsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerMigrations();
-
-        $this->publishes([
-            __DIR__ . '/../config/transactions.php' => config_path('transactions.php'),
-        ]);
     }
 
 
